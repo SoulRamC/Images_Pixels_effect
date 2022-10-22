@@ -17,7 +17,7 @@ window.addEventListener('load', function(){
             this.size = this.effect.gap;
             this.vx =0;
             this.vy = 0;
-            this.ease = 0.5
+            this.ease = 0.3
             this.friction = 0.95;
             this.dx = 0;
             this.dy = 0;
@@ -62,9 +62,9 @@ window.addEventListener('load', function(){
             this.centerY = canvas.height * 0.5;
             this.x = this.centerX - this.image.width * 0.5;
             this.y = this.centerY - this.image.height * 0.5;
-            this.gap = 2;
+            this.gap = 3;
             this.mouse = {
-                radius: 1000,
+                radius: 2000,
                 x:undefined,
                 y:undefined
             }
