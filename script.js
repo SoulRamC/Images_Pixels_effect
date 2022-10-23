@@ -6,14 +6,14 @@ window.addEventListener('load', function(){
     console.log(ctx);
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
-    function handleMove(evt){
+    /*function handleMove(evt){
         evt.preventDefault();
         const touches = evt.changedTouches;
         for (let i = 0; i < touches.length; i++) {
             const idx = ongoingTouchIndexById(touches[i].identifier);
             console.log(idx);
         }
-    }
+    }*/
 
 
     class Particle{
