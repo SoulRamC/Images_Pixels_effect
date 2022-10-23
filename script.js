@@ -31,12 +31,12 @@ window.addEventListener('load', function(){
             context.fillRect(this.x, this.y, this.size, this.size);
         }
         update(){
-            this.dx = this.effect.mouse.x - this.x;
-            this.dy = this.effect.mouse.y - this.y;
+            this.dx = (this.effect.mouse.x || this.effect.touch.x) - this.x;
+            this.dy = (this.effect.mouse.y || this.effect.touch.y) - this.y;
             this.distance = this.dx * this.dx + this.dy * this.dy;
-            this.force = -this.effect.mouse.radius / this.distance;
+            this.force = (-this.effect.mouse.radius|| -this.effect.touch.radius) / this.distance;
 
-            if(this.distance <  this.effect.mouse.radius){
+            if(this.distance <  (this.effect.mouse.radius || this.effect.touch.radius )){
                 this.angle = Math.atan2(this.dy, this.dx);
                 this.vx += this.force * Math.cos(this.angle);
                 this.vy += this.force * Math.sin(this.angle);
@@ -69,9 +69,18 @@ window.addEventListener('load', function(){
                 x:undefined,
                 y:undefined
             }
+            this.touch = {
+                radius: 2000,
+                x: undefined,
+                y: undefined
+            }
             window.addEventListener('mousemove',event =>{
                 this.mouse.x = event.x;
                 this.mouse.y = event.y;
+            })
+            window.addEventListener('touchmove', event =>{
+               this.touch.x = event.x;
+                this.touch.y = event.y;
             })
         }
         init(context){
