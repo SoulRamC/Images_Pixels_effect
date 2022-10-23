@@ -1,4 +1,5 @@
-
+ const img = new Image();
+ img.src = localStorage.getItem('img');
 window.addEventListener('load', function(){
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
@@ -67,7 +68,7 @@ window.addEventListener('load', function(){
             this.width = width;
             this.height = height;
             this.particlesArray = [];
-            this.image = document.getElementById('image1');
+            this.image = img;
             this.centerX = canvas.width * 0.5;
             this.centerY = canvas.height * 0.5;
             this.x = this.centerX - this.image.width * 0.5;
@@ -142,4 +143,9 @@ window.addEventListener('load', function(){
     warpButton.addEventListener('click', function(){
         effect.warp();
     })
+    /*const returnButton = this.document.getElementById('goback');
+    returnButton.addEventListener('click', function(){
+        
+    })*/
+
 });
