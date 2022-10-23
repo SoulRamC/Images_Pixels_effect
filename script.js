@@ -1,6 +1,7 @@
 window.addEventListener('load', function(){
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
+    
     console.log(ctx);
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
@@ -57,12 +58,12 @@ window.addEventListener('load', function(){
             this.width = width;
             this.height = height;
             this.particlesArray = [];
-            this.image = document.getElementById('image1')
+            this.image = document.getElementById('image1');
             this.centerX = canvas.width * 0.5;
             this.centerY = canvas.height * 0.5;
             this.x = this.centerX - this.image.width * 0.5;
             this.y = this.centerY - this.image.height * 0.5;
-            this.gap = 3;
+            this.gap = 5;
             this.mouse = {
                 radius: 2000,
                 x:undefined,
